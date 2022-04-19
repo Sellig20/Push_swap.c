@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:23:09 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/18 19:07:30 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:44:52 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_exec_bonus_a(t_bidule **a_list, char *str)
 {
-	if (ft_lstsize(a_list) != 0)
+	if (ft_lstsize(a_list) != 0 && ft_lstsize(a_list) != 1)
 	{
 		if (ft_strcmp(str, "sa\n") == 0)
 			ft_sa_bonus(a_list);
@@ -27,7 +27,7 @@ void	ft_exec_bonus_a(t_bidule **a_list, char *str)
 
 void	ft_exec_bonus_b(t_bidule **b_list, char *str)
 {
-	if (ft_lstsize(b_list) != 0)
+	if (ft_lstsize(b_list) != 0 && ft_lstsize(b_list) != 1)
 	{
 		if (ft_strcmp(str, "sb\n") == 0)
 			ft_sb_bonus(b_list);
