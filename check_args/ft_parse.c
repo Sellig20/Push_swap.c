@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 13:39:09 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/16 17:27:09 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:10:26 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	ft_parsing_ac_split(int ac, char **av, int i)
 	{
 		write(2, "Error\n", 6);
 		free_args(args);
-		exit(0);
+		exit(1);
 	}
 	if (ft_parsing(ac, args, i) == 1)
 	{
@@ -113,13 +113,13 @@ void	ac_exit(int ac, char **av, int i)
 	if (ac > 2)
 	{
 		if (ft_parsing(ac, av, i) == 1)
-			exit(0);
+			exit(1);
 	}
 	else if (ac < 2)
 		exit(0);
 	else if (ac == 2)
 	{
 		if (ft_parsing_ac_split(ac, av, i) == 1)
-			exit(0);
+			exit(1);
 	}
 }

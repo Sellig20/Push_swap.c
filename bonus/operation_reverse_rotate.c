@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_reverse_rotate.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:17:41 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/15 23:28:51 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:01:35 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_rra_bonus(t_bidule **a_list)
 	t_bidule	*last;
 	t_bidule	*a;
 
+	if (!*a_list)
+		return ;
 	a = *a_list;
 	while (a->next)
 	{
@@ -36,6 +38,8 @@ void	ft_rrb_bonus(t_bidule **b_list)
 	t_bidule	*last;
 	t_bidule	*b;
 
+	if (!*b_list)
+		return ;
 	b = *b_list;
 	while (b->next)
 	{
@@ -54,6 +58,8 @@ void	ft_rrr_bonus(t_bidule **a_list, t_bidule **b_list)
 	t_bidule	*lasta;
 	t_bidule	*a;
 
+	if (!*a_list || !*b_list)
+		return ;
 	a = *a_list;
 	while (a->next)
 	{

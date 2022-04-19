@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_lists.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:29:31 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/15 22:02:53 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:48:46 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	ft_display(t_bidule **liste)
 	tmp = *liste;
 	while (tmp != NULL)
 	{
-		printf("%d", tmp->x);
+		write(1, "%d", tmp->x);
 		tmp = tmp->next;
 		if (!(tmp == NULL))
-			printf(", ");
+			write(1, ", ", 2);
 		else
-			printf(".\n");
+			write(1, ".\n", 2);
 	}
 }

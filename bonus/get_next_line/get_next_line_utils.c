@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:38:17 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/18 14:19:06 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:24:15 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
 #include "../../push_swap.h"
 
 int	ft_is_a_line(char *str)
@@ -28,16 +27,16 @@ int	ft_is_a_line(char *str)
 		return (0);
 }
 
-int    ft_strlen_gnl(char *str)
+int	ft_strlen_gnl(char *str)
 {
-    int    i;
+	int	i;
 
-    if (!str)
-        return (0);
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 int	ft_read_buffer(int fd, char *buf)
@@ -67,7 +66,8 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	final = malloc(sizeof(char) * (ft_strlen_gnl(s1) + (ft_strlen_gnl(s2)) + 1));
+	final = malloc(sizeof(char) * (ft_strlen_gnl(s1)
+				+ (ft_strlen_gnl(s2)) + 1));
 	if (!final)
 		free_join(final, i);
 	while (s1 && (char)s1[i])

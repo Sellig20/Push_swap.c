@@ -6,7 +6,7 @@
 /*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:37:07 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/15 22:16:23 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:42:46 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_ra(t_bidule **a_list)
 	a->next = tmp;
 	tmp->next = NULL;
 	*a_list = follow;
-	printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_bidule **b_list)
@@ -45,7 +45,7 @@ void	ft_rb(t_bidule **b_list)
 	b->next = tmp;
 	tmp->next = NULL;
 	*b_list = follow;
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	ft_rr(t_bidule **a_list, t_bidule **b_list)
@@ -63,7 +63,7 @@ void	ft_rr(t_bidule **a_list, t_bidule **b_list)
 	tmpa->next = NULL;
 	*a_list = follow_a;
 	ft_rotate_b(&(*b_list));
-	printf("rr\n");
+	write(1, "rr\n", 3);
 }
 
 void	ft_rotate_b(t_bidule **b_list)

@@ -1,8 +1,8 @@
-NAME = push_swap
+NAME		=	push_swap
 
-BONUS_NAME = checker
+BONUS_NAME	=	checker
 
-SRCS	=		check_args/ft_is_sorted.c \
+SRCS		=	check_args/ft_is_sorted.c \
 				check_args/ft_parse.c \
 				ft_push_sup_med.c \
 				get_min_max.c \
@@ -57,9 +57,9 @@ BONUS_SRC	=	bonus/bonus.c \
 OBJS		=	${SRCS:.c=.o}
 BONUS_OBJ	=	${BONUS_SRC:.c=.o}
 
-CC		=	gcc
+CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
-RM = 	rm -rf
+RM			= 	rm -rf
 
 all:	${NAME}
 
@@ -81,6 +81,6 @@ fclean: clean
 	${RM} ${NAME}
 	${RM} ${BONUS_NAME}
 
-re: fclean all bonus
+re: fclean all
 
 .PHONY: all clean fclean re

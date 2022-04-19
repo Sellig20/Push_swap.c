@@ -6,7 +6,7 @@
 /*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 13:36:29 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/15 22:22:33 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:43:22 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sa(t_bidule **a_list)
 	tmp = a->x;
 	a->x = a->next->x;
 	a->next->x = tmp;
-	printf("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_bidule **b_list)
@@ -35,7 +35,7 @@ void	ft_sb(t_bidule **b_list)
 	tmp = b->x;
 	b->x = b->next->x;
 	b->next->x = tmp;
-	printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_bidule **a_list, t_bidule **b_list)
@@ -53,5 +53,5 @@ void	ft_ss(t_bidule **a_list, t_bidule **b_list)
 	b->x = b->next->x;
 	a->next->x = tmpa;
 	b->next->x = tmpb;
-	printf("ss\n");
+	write(1, "ss\n", 3);
 }

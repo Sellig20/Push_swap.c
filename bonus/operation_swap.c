@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jecolmou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:17:05 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/15 23:35:11 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:00:39 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_sa_bonus(t_bidule **a_list)
 	int			tmp;
 	t_bidule	*a;
 
+	if (!*a_list)
+		return ;
 	a = *a_list;
 	tmp = a->x;
 	a->x = a->next->x;
@@ -28,6 +30,8 @@ void	ft_sb_bonus(t_bidule **b_list)
 	int			tmp;
 	t_bidule	*b;
 
+	if (!*b_list)
+		return ;
 	b = *b_list;
 	tmp = b->x;
 	b->x = b->next->x;
@@ -41,6 +45,8 @@ void	ft_ss_bonus(t_bidule **a_list, t_bidule **b_list)
 	t_bidule	*a;
 	t_bidule	*b;
 
+	if (!*b_list || !*a_list)
+		return ;
 	a = *a_list;
 	b = *b_list;
 	tmpa = a->x;

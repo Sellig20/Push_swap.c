@@ -6,7 +6,7 @@
 /*   By: jecolmou <jecolmou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:23:09 by jecolmou          #+#    #+#             */
-/*   Updated: 2022/04/18 18:12:39 by jecolmou         ###   ########.fr       */
+/*   Updated: 2022/04/18 19:07:30 by jecolmou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ void	ft_exec_bonus_b(t_bidule **b_list, char *str)
 
 void	ft_exec_bonus_a_b(t_bidule **a_list, t_bidule **b_list, char *str)
 {
-	if (ft_lstsize(a_list) != 0 || ft_lstsize(b_list) != 0)
-	{
-		write(2, "Error\n", 6);
-		exit(0);
-	}
 	if (ft_strcmp(str, "pa\n") == 0)
 		ft_pa_bonus(b_list, a_list);
 	else if (ft_strcmp(str, "ss\n") == 0)
@@ -59,10 +54,10 @@ void	ft_exec_bonus_a_b(t_bidule **a_list, t_bidule **b_list, char *str)
 
 void	answer_checker(t_bidule *a_list_bonus, t_bidule *b_list_bonus)
 {
-	if ((ft_is_sorted(&a_list_bonus) == 1) && b_list_bonus == NULL)
-		printf("OK\n");
+	if (b_list_bonus == NULL && (ft_is_sorted(&a_list_bonus) == 1))
+		write(1, "OK\n", 3);
 	else
-		printf("KO\n");
+		write(1, "KO\n", 3);
 }
 
 int	main(int ac, char **av)
@@ -80,12 +75,13 @@ int	main(int ac, char **av)
 	{
 		write(2, "Error\n", 6);
 		get_next_line(0, 1);
-		return (ft_lstclear(&a_list_bonus), 0);
+		return (ft_lstclear(&a_list_bonus), 1);
 	}
 	if (ft_check_op(&a_list_bonus, &b_list_bonus) == 0)
-		return (ft_lstclear(&a_list_bonus), 0);
+		return (ft_lstclear(&a_list_bonus), 1);
 	answer_checker(a_list_bonus, b_list_bonus);
 	get_next_line(0, 1);
 	ft_lstclear(&a_list_bonus);
 	ft_lstclear(&b_list_bonus);
+	return (0);
 }
